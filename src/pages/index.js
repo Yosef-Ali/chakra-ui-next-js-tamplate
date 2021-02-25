@@ -1,79 +1,37 @@
-import {
-	chakra,
-	DarkMode,
-	useColorMode,
-	useColorModeValue,
-	Button,
-	Image,
-	Input,
-	InputGroup,
-	InputLeftElement,
-	InputRightElement,
-	Stack,
-	Container,
-} from '@chakra-ui/react';
+import { chakra } from '@chakra-ui/react';
 import Head from 'next/head';
 import { Chakra } from '../Chakra';
-import { useState } from 'react';
 
-function Switcher() {
-	const { toggleColorMode: toggleMode } = useColorMode();
-	const text = useColorModeValue('light-man', 'dark-man');
-	return <button onClick={toggleMode}>Current mode: {text}</button>;
-}
-
-const InputGrouper = () => {
-	const [ bool, setBool ] = useState(false);
-	return (
-		<div>
-			<InputGroup maxWidth='400px'>
-				<InputLeftElement color='gray.300' fontSize='1.2em' children='$' />
-				<Input placeholder='Enter amount' />
-				{bool && <InputRightElement children={'C'} />}
-			</InputGroup>
-			<button onClick={() => setBool(s => !s)}>Toggle Right Element</button>
-			<br />
-		</div>
-	);
-};
+import Feature from '../components/Feature';
+import Feature2 from '../components/Feature2';
+import Feature3 from '../components/Feature3';
+import Feature4 from '../components/Feature4';
+import Hero from '../components/Hero';
+import Hero2 from '../components/Hero2';
+import Hero3 from '../components/Hero3';
+import Card from '../components/Card';
+import Card2 from '../components/Card2';
+import Card4 from '../components/Card4';
 
 const Home = () => (
 	<Chakra>
-		<Container>
-			<Head>
-				<title>Create Next App</title>
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
+		<Head>
+			<title>Create Next App</title>
+			<link rel='icon' href='/favicon.ico' />
+		</Head>
 
-			<main>
-				<chakra.div fontSize='20px'>Welcome to chakra</chakra.div>
-				{/* <Image
-					src='https://bit.ly/sage-adebayo'
-					fallbackSrc='https://via.placeholder.com/240'
-					fit='cover'
-					width='400px'
-					height='300px'
-				/>
-
-				<chakra.div bg='gray.800' padding={4}>
-					<DarkMode>
-						<Button colorScheme='green'>Welcome</Button>
-					</DarkMode>
-				</chakra.div>
-
-				<Input type='tel' placeholder='Phone number' />
-
-				<InputGrouper />
-
-				<Switcher />
-
-				<Stack direction='row' spacing='40px'>
-					<div>Welcome home</div>
-					<div>Welcome home</div>
-					<div>Welcome home</div>
-				</Stack> */}
-			</main>
-		</Container>
+		<main>
+			<Hero />
+			<Hero2 />
+			<Hero3 />
+			<Feature />
+			<Feature2 />
+			<Feature3 />
+			<Feature4 />
+			<Card />
+			<Card2 />
+			<Card4 />
+		</main>
 	</Chakra>
 );
 
